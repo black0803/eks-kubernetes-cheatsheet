@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    # alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-southeast-3:111111111111:certificate/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
+    alb.ingress.kubernetes.io/group.name: nginx-demo
+    # alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}, {"HTTP": 80}]'
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-group-attributes: stickiness.enabled=true,stickiness.lb_cookie.duration_seconds=60,load_balancing.algorithm.type=least_outstanding_requests
+    alb.ingress.kubernetes.io/target-type: ip
+    kubernetes.io/ingress.class: alb
+  name: alb-nginx
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          service:
+            name: nginx-demo-svc
+            port:
+              number: 80
+        path: /
+        pathType: Prefix

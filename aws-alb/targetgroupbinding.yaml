@@ -1,0 +1,11 @@
+apiVersion: elbv2.k8s.aws/v1beta1
+kind: TargetGroupBinding
+metadata:
+  name: sanny-green-app
+  namespace: ns-sanny-app
+spec:
+  serviceRef:
+    name: service-sanny-green-app # route traffic to the awesome-service
+    port: 80
+  targetGroupARN: arn:aws:elasticloadbalancing:ap-southeast-3:111111111111:targetgroup/sanny-green-app/aaaaaaaaaaaaaaaa
+  targetType: ip
