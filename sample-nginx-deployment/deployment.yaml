@@ -51,10 +51,11 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-group-attributes: stickiness.enabled=true,stickiness.lb_cookie.duration_seconds=60,load_balancing.algorithm.type=least_outstanding_requests
     alb.ingress.kubernetes.io/target-type: ip
-    kubernetes.io/ingress.class: alb
+    # kubernetes.io/ingress.class: alb
   name: alb-nginx
   namespace: sample-nginx
 spec:
+  ingressClassName: alb
   rules:
   - http:
       paths:
