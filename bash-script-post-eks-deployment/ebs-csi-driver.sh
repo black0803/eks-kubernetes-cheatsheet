@@ -6,11 +6,6 @@ ACCOUNT_ID="111122223333"
 EBS_KMS_KEY_ARN="custom-key-id"
 ####################### VARIABLES #######################
 
-####################### VARIABLES #######################
-CLUSTER_NAME="Prod-MachineLearning-EKSControlPlane"
-ACCOUNT_ID="307939290067"
-EBS_KMS_KEY_ARN="custom-key-id"
-####################### VARIABLES #######################
 cat <<EOF > ebs-csi-driver-policy.json
 {
   "Version": "2012-10-17",
