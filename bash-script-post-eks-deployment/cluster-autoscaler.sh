@@ -6,12 +6,6 @@ ACCOUNT_ID="111122223333"
 REGION="ap-southeast-3"
 ####################### VARIABLES #######################
 
-####################### VARIABLES #######################
-CLUSTER_NAME="Prod-MachineLearning-EKSControlPlane"
-ACCOUNT_ID="307939290067"
-REGION="ap-southeast-3"
-####################### VARIABLES #######################
-
 cat <<EOF >cluster-autoscaler-policy.json
 {
     "Version": "2012-10-17",
