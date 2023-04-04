@@ -3,6 +3,7 @@
 ####################### VARIABLES #######################
 CLUSTER_NAME="<my_cluster>"
 ACCOUNT_ID="111122223333"
+REGION="ap-southeast-3"
 EBS_KMS_KEY_ARN="custom-key-id"
 ####################### VARIABLES #######################
 
@@ -26,7 +27,7 @@ cat <<EOF > ebs-csi-driver-policy.json
     },
     {
       "Effect": "Allow",
-      "Action": [
+      "Action": [ 
         "kms:Encrypt",
         "kms:Decrypt",
         "kms:ReEncrypt*",
